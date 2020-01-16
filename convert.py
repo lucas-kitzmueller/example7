@@ -25,19 +25,10 @@ with open ('output.csv', 'w') as f:
 		enddate = poll['enddate']
 		approve = poll['approve']
 
+		# 4. and within that loop... convert the format of `enddate` from "1/22/2017" to "22-Jan-17"
 		python_enddate = datetime.strptime(enddate, "%m/%d/%Y")
 		new_date = python_enddate.strftime("%d-%b-%y")
 
+		# 5. write a new row of data with the transformed date and value for "approve" 
 		writer.writerow([new_date,approve])
-
-
-    # 4. and within that loop... convert the format of `enddate` from "1/22/2017" to "22-Jan-17"
-    # hint: to read the date you will need to use
-    #       date = datetime.datetime.strptime(myrawstring, "insert input format here")
-    #
-    #       and to write the date you will need to use something like 
-    #       new_date = date.strftime("insert output format here")
-    # 
-    #       date formats can be found at https://strftime.org/
     
-    # 5. write a new row of data with the transformed date and value for "approve" 
