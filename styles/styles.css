@@ -3,3 +3,12 @@
   stroke: steelblue;
   stroke-width: 2px;
 }
+
+script{
+	color: red;
+}
+
+h1{
+	font-family: "Roboto", sans-serif;
+	color: darkred;
+}
